@@ -10,7 +10,7 @@ const VideoSchema = new mongoose.Schema(
     views: { type: Number },
     likes: { type: [String], default: [] },
     dislikes: { type: [String], default: [] },
-    comments: { type: [String], default: [] },
+    comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
     category: { type: String, required: true },
   },
   { timestamps: true }

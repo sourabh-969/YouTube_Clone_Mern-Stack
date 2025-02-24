@@ -38,5 +38,5 @@ app.use("/api/uploads", uploadRoutes);
 
 app.listen(PORT, () => {
   mongoConnection();
-  console.log("Server ist listening on Port: ",PORT);
+  console.log("Server is on Port: ",PORT);
 });

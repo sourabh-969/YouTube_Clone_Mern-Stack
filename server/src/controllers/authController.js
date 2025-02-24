@@ -22,32 +22,39 @@ const register = async (req, res, next) => {
 const login = async (req, res, next) => {
   const nameOrEmail = req.body.name;
   try {
+    // Find the channel by email or name
     const l_channel = await Channel.findOne({
       $or: [{ email: nameOrEmail }, { name: nameOrEmail }],
     });
 
-    if (!l_channel) return res.status(404).json("Channel not found!");
+    if (!l_channel) {
+      return res.status(404).json({ error: "Channel not found!" });
+    }
 
+    // hashed password
     const l_passwordCheck = await bcrypt.compare(
       req.body.password,
       l_channel.password
     );
 
-    if (!l_passwordCheck)
-      return res.status(400).json("Wrong password or channel name!");
+    if (!l_passwordCheck) {
+      return res.status(400).json({ error: "Wrong password or channel name!" });
+    }
 
-    const accessToken = jwt.sign(
-      { id: l_channel._id },
-      process.env.SECRET_JWT,
-      { expiresIn: "1d" }
-    );
+    // Generate token
+    const accessToken = jwt.sign({ id: l_channel._id }, process.env.SECRET_JWT, {
+      expiresIn: "1d",
+    });
 
+    // Set the token as a cookie
     res
       .cookie("accessToken", accessToken, {
-        maxAge: 1 * 24 * 60 * 60 * 1000, // expires in 1 day(Cookie:nodejs middleware for accessing http req.)
+        maxAge: 1 * 24 * 60 * 60 * 1000, // 1 day
         httpOnly: true,
-        secure: true,
+        secure: process.env.NODE_ENV === "production", // HTTPS only in production
         sameSite: "strict",
+        domain: "localhost",
+        path: "/", // Set the cookie path
       })
       .status(200)
       .json({
@@ -56,8 +63,7 @@ const login = async (req, res, next) => {
         profile: l_channel.profile,
       });
   } catch (error) {
-    next(error);
+    next(error); // Pass errors to the error-handling middleware
   }
 };
-
 module.exports = { login, register };

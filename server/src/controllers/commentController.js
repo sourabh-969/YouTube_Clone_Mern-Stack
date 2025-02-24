@@ -6,7 +6,7 @@ const postComment = async (req, res) => {
   try {
     const { id } = req.params; // getting Video ID from URl
     const { desc } = req.body; // Comment text
-
+    console.log("Channel ID from request:", req.channel?.id);
     // Find the video
     const video = await Video.findById(id);
     if (!video) {
@@ -14,7 +14,7 @@ const postComment = async (req, res) => {
     }
 
     // Create a new comment
-    const newComment = new Comment({videoId: id,desc,channelId: req.channel.id, });
+    const newComment = new Comment({videoId:id,desc,channelId:req.channel.id, });
 
     // Save the comment
     await newComment.save();
