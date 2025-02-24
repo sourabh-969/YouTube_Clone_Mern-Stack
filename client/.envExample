@@ -1,0 +1,2 @@
+# Server URL (Backend)
+VITE_API_BASE_URL=(e.g, http://localhost/5000/)
