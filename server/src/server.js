@@ -20,7 +20,14 @@ const PORT = process.env.SERVER_PORT || 5001;
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
+// app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL, // Allow requests from your frontend
+    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
+    credentials: true, // Allow cookies and credentials
+  })
+);
 
 // static files(manually creating folder locally for upload video,image).
 app.use(express.static("assets"));
