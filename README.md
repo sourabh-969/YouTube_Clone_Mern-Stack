@@ -1,5 +1,8 @@
 # YouTube Clone - MERN Stack<img src="https://www.aalpha.net/wp-content/uploads/2023/11/MERN-Stack-technologies.png" width=20% >
 
+<h3>Note</h3>
+<p>This project includes a file upload feature that allows users to upload videos. The backend uses <a href="https://www.npmjs.com/package/multer"><b>Multer</b></a>, a Node.js middleware, to handle the file upload process and save the videos to the local machine.`for more `</p><br>
+
 **Project Demonstration**
 <video controls src="./Video/Demonstration video.mp4" title="Project Demonstration video"></video>
 
@@ -7,11 +10,12 @@
 1. [Project Overview](#project-overview)
 2. [Features](#features)
 3. [Technologies Used](#technologies-used)
-4. [Getting Started](#getting-started)
+4. [File Upload Feature](#file-upload-feature)
+5. [Getting Started](#getting-started)
    - [Prerequisites](#prerequisites)
    - [Installation](#installation)
-5. [Project Structure](#project-structure)
-6. [API Endpoints](#api-endpoints)
+6. [Project Structure](#project-structure)
+7. [API Endpoints](#api-endpoints)
 8. [Frontend Components](#frontend-components)
 9. [Authentication](#authentication)
 10. [Search and Filter Functionality](#search-and-filter-functionality)
@@ -23,7 +27,7 @@
 
 ## Project Overview
 
-This project is a full-stack YouTube clone built using the MERN (MongoDB, Express, React, Node.js) stack. It aims to replicate core features of YouTube, allowing users to view, interact with videos, and manage their own channels.
+This project is a full-stack YouTube clone built using the <a href="https://www.geeksforgeeks.org/mern-stack/"><b>MERN</b></a> (MongoDB, Express, React, Node.js) stack. It aims to replicate core features of YouTube, allowing users to view, interact with videos, and manage their own channels.
 
 ## Features
 
@@ -63,10 +67,12 @@ This project is a full-stack YouTube clone built using the MERN (MongoDB, Expres
 - **Database**: MongoDB
 - **Authentication**: JSON Web Tokens (JWT)
 - **Version Control**: Git
+   - Addition vscode extension
+      - **Pitter**: Format Document
 
-### Addition vscode extension
-
-- **Pitter**: Format Document
+## File Upload Feature
+- This project includes a file upload feature that allows users to upload videos. The backend uses <a href="https://www.npmjs.com/package/multer"><b>Multer</b></a>, a Node.js middleware, to handle the file upload process and save the videos to the local machine. { use can find uploaded file in directory- `server/src/assest` }<br>
+####   *If you plan to deploy this project, consider using cloud storage (e.g., AWS S3, Google Cloud Storage) for better scalability.
 
 ## Getting Started
 
