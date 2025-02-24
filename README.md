@@ -1,6 +1,7 @@
 # YouTube Clone - MERN Stack<img src="https://www.aalpha.net/wp-content/uploads/2023/11/MERN-Stack-technologies.png" width=20% >
 
-
+**Project Demonstration**
+<video controls src="./Video/Demonstration video.mp4" title="Project Demonstration video"></video>
 
 ## Table of Contents
 1. [Project Overview](#project-overview)
@@ -82,18 +83,17 @@ This project is a full-stack YouTube clone built using the MERN (MongoDB, Expres
 https://github.com/sourabh-969/YouTube_Clone_Mern-Stack.git
 
 2. Install backend dependencies:
->cd backend<br>
+>cd `server`<br>
 >npm install
 
 3. Install frontend dependencies:
->cd ../frontend<br>
+>cd `../client`<br>
 >npm install
 
 
 4. Set up environment variables:
-- Create a `.env` file in the `backend` directory
-- Add the following variables:<br>
-```MONGODB_URI=your_mongodb_connection_stringJWT_SECRET=your_jwt_secretPORT=5000```
+- Search for `.envExample` file in the `server` and `client` directory
+- Edit both the file accordingly and `Rename` file as `.env`.
 
 
 5. Start the backend server:
@@ -102,7 +102,7 @@ https://github.com/sourabh-969/YouTube_Clone_Mern-Stack.git
 
 
 6. Start the frontend development server: 
->cd client
+>cd client<br>
 >npm run dev
 
 7. Open your browser and navigate to `http://localhost:${PORT}$`
@@ -110,7 +110,7 @@ https://github.com/sourabh-969/YouTube_Clone_Mern-Stack.git
 8. Project Structure
 <table>
 <tr><pre>
-**YouTube/**
+**YouTube/ root directory**
 ├─ client/
 ├─ LICENSE
 ├─ README.md
@@ -120,7 +120,7 @@ https://github.com/sourabh-969/YouTube_Clone_Mern-Stack.git
 <tr>
 <td width=50%>
 <pre>
-***client/***
+***client/ aka Backend***
 ├─ .env
 ├─ .eslintrc.cjs
 ├─ .gitignore
@@ -199,7 +199,7 @@ https://github.com/sourabh-969/YouTube_Clone_Mern-Stack.git
 </td>
 <td>
 <pre>
-***server/***
+***server/ aka Frontend***
 ├─ .gitignore
 ├─ package-lock.json
 ├─ package.json
@@ -305,7 +305,6 @@ The application is designed to be fully responsive across devices:
 ## Testing
 
 - Backend: Use Postman testing of API endpoints
-- Frontend: Use React Testing Library for component testing
 
 ## Contributing
 
