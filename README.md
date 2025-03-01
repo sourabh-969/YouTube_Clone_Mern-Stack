@@ -122,7 +122,8 @@ https://github.com/sourabh-969/YouTube_Clone_Mern-Stack.git
 ├─ client/
 ├─ LICENSE
 ├─ README.md
-└─ server/
+├─ server/
+└─ Screenshot/
 </pre>
 </tr>
 <tr>
