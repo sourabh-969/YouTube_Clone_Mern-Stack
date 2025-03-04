@@ -1,10 +1,10 @@
 # YouTube Clone - MERN Stack<img src="https://www.aalpha.net/wp-content/uploads/2023/11/MERN-Stack-technologies.png" width=20% >
 
-<h2>Deploy link(frontend only): <a href="https://you-tube-clone-mern-stack.vercel.app/"> Click🔗Me</h2>
+<h2>Deploy link : <a href="https://ytclone-sepia.vercel.app/"> Click🔗Me</h2>
 <h3>Note</h3>
 <p>This project includes a file upload feature that allows users to upload videos. The backend uses <a href="https://www.npmjs.com/package/multer"><b>Multer</b></a>, a Node.js middleware, to handle the file upload process and save the videos to the local machine.`for more `</p><br>
 
-**Project Demonstration**
+**Project Video Demonstration**
 
 https://github.com/user-attachments/assets/3b0399dd-b0c0-403c-870a-4a0be886e963
 
@@ -122,7 +122,8 @@ https://github.com/sourabh-969/YouTube_Clone_Mern-Stack.git
 ├─ client/
 ├─ LICENSE
 ├─ README.md
-└─ server/
+├─ server/
+└─ Screenshot/
 </pre>
 </tr>
 <tr>
