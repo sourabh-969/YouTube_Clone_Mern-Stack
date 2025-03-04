@@ -62,7 +62,9 @@ export default function Video() {
       let res = null;
       if (videoDetails.likes.includes(authUser._id)) {
         res = await services.dislikeVideoAsync(videoDetails._id);
-      } else {
+      } else if (videoDetails.dislikes.includes(authUser._id)) {
+                res = await services.likeVideoAsync(videoDetails._id);
+      }else {
         res = await services.likeVideoAsync(videoDetails._id);
       }
 
@@ -174,7 +176,6 @@ export default function Video() {
                   </>
                 )}
 
-                {/* i want a dislike button similar to this  */}
                 <div className="like-wrapper">
                   <div className="action-item" onClick={handleLikes}>
                     {videoDetails?.likes.includes(authUser?._id) ? (
@@ -187,10 +188,14 @@ export default function Video() {
                 </div>
 
                 <div className="like-wrapper">
-                  <div className="action-item" onClick={handleClick}>
-                    {dislike ? <BiSolidDislike /> : <BiDislike />}
+                  <div className="action-item" onClick={handleLikes}>
+                    {videoDetails?.dislikes.includes(authUser?._id) ?(
+                      <BiSolidDislike /> 
+                    ) : (
+                    <BiDislike />
+                    )}
                   </div>
-                  <span>{dislike}</span>
+                  <span>{videoDetails?.dislikes.length}</span>
                 </div>
               </div>
             </div>
