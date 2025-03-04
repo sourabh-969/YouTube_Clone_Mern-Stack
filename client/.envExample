@@ -1,2 +1,2 @@
 # Server URL (Backend)
-VITE_API_BASE_URL=(e.g, http://localhost/5000/)
+VITE_API_BASE_URL=(e.g, http://localhost:<Server_PORT_Number>/api Or https://yt-server-3sei.onrender.com)
